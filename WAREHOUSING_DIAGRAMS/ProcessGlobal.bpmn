@@ -5,7 +5,7 @@
     <bpmn:participant id="Participant_0zqvci3" name="Warehousing" processRef="Process_1druvbs" />
     <bpmn:participant id="Participant_0v8lxhe" name="Transportation" processRef="Process_0mk981y" />
     <bpmn:messageFlow id="MessageFlow_1lbz6ps" sourceRef="Participant_1yvdzw6" targetRef="StartEvent_1xexzsj" />
-    <bpmn:messageFlow id="MessageFlow_0fv08nz" sourceRef="SubProcess_1ggznwy" targetRef="Participant_0v8lxhe" />
+    <bpmn:messageFlow id="MessageFlow_0fv08nz" name="SHIPPMENT OF GOODS" sourceRef="SubProcess_1ggznwy" targetRef="Participant_0v8lxhe" />
   </bpmn:collaboration>
   <bpmn:process id="Process_0tiimbu" isExecutable="false" />
   <bpmn:process id="Process_1druvbs" isExecutable="false">
@@ -91,6 +91,9 @@
       <bpmndi:BPMNEdge id="MessageFlow_0fv08nz_di" bpmnElement="MessageFlow_0fv08nz">
         <di:waypoint x="1020" y="400" />
         <di:waypoint x="1020" y="530" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1028" y="446" width="83" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_16egkyn_di" bpmnElement="EndEvent_16egkyn">
         <dc:Bounds x="1222" y="342" width="36" height="36" />
