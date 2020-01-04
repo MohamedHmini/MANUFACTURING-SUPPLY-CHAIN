@@ -49,11 +49,6 @@
       <bpmn:outgoing>SequenceFlow_0qk4s7r</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1vq4awt" />
     </bpmn:startEvent>
-    <bpmn:inclusiveGateway id="ExclusiveGateway_0ef4dey">
-      <bpmn:incoming>SequenceFlow_0kowily</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1rsjiz8</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_0s1evur</bpmn:outgoing>
-    </bpmn:inclusiveGateway>
     <bpmn:eventBasedGateway id="ExclusiveGateway_0il6tyr">
       <bpmn:incoming>SequenceFlow_19xgy6c</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_0zrbbif</bpmn:incoming>
@@ -61,11 +56,6 @@
       <bpmn:outgoing>SequenceFlow_059q69l</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_1mh0o82</bpmn:outgoing>
     </bpmn:eventBasedGateway>
-    <bpmn:inclusiveGateway id="InclusiveGateway_1w361wo">
-      <bpmn:incoming>SequenceFlow_1rsjiz8</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0vmz2e4</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_1y2ijp8</bpmn:outgoing>
-    </bpmn:inclusiveGateway>
     <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_1t1ocmk">
       <bpmn:incoming>SequenceFlow_0s1evur</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ux7loz</bpmn:outgoing>
@@ -128,6 +118,16 @@
     <bpmn:sequenceFlow id="SequenceFlow_1y2ijp8" sourceRef="InclusiveGateway_1w361wo" targetRef="IntermediateThrowEvent_1y5bmhg" />
     <bpmn:sequenceFlow id="SequenceFlow_0n7sevw" sourceRef="IntermediateThrowEvent_1y5bmhg" targetRef="SubProcess_1a52prb" />
     <bpmn:sequenceFlow id="SequenceFlow_0o5hib0" sourceRef="IntermediateCatchEvent_1ggjlmo" targetRef="EndEvent_0jrffjt" />
+    <bpmn:exclusiveGateway id="ExclusiveGateway_0ef4dey">
+      <bpmn:incoming>SequenceFlow_0kowily</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1rsjiz8</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0s1evur</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="InclusiveGateway_1w361wo">
+      <bpmn:incoming>SequenceFlow_1rsjiz8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0vmz2e4</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_1y2ijp8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
     <bpmn:textAnnotation id="TextAnnotation_0hj02vg">
       <bpmn:text>PROCUREMENT OF PRIME MATTER</bpmn:text>
     </bpmn:textAnnotation>
@@ -239,9 +239,6 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_1vu1f91_di" bpmnElement="Participant_1vu1f91" isHorizontal="true">
         <dc:Bounds x="923" y="360" width="597" height="60" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="InclusiveGateway_10bibnz_di" bpmnElement="ExclusiveGateway_0ef4dey">
-        <dc:Bounds x="935" y="885" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1rsjiz8_di" bpmnElement="SequenceFlow_1rsjiz8">
         <di:waypoint x="960" y="935" />
@@ -387,9 +384,6 @@
           <dc:Bounds x="340" y="1231" width="59" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="InclusiveGateway_1w361wo_di" bpmnElement="InclusiveGateway_1w361wo">
-        <dc:Bounds x="1255" y="985" width="50" height="50" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_0hk46q4_di" bpmnElement="SubProcess_0hk46q4">
         <dc:Bounds x="1390" y="1050" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -546,6 +540,12 @@
         <di:waypoint x="780" y="910" />
         <di:waypoint x="935" y="910" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0b4iewt_di" bpmnElement="ExclusiveGateway_0ef4dey" isMarkerVisible="true">
+        <dc:Bounds x="935" y="885" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0la4gdn_di" bpmnElement="InclusiveGateway_1w361wo" isMarkerVisible="true">
+        <dc:Bounds x="1255" y="985" width="50" height="50" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
