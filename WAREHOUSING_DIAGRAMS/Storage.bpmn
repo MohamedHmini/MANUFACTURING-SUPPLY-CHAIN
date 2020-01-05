@@ -64,7 +64,7 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0bz5s4s">
       <bpmndi:BPMNShape id="Participant_03hmqwi_di" bpmnElement="Participant_03hmqwi" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="1410" height="322" />
+        <dc:Bounds x="160" y="80" width="1280" height="322" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_1av5oi4_di" bpmnElement="Task_1av5oi4">
         <dc:Bounds x="300" y="170" width="100" height="80" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1pylo5j" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.5.0">
   <bpmn:collaboration id="Collaboration_00egolz">
-    <bpmn:participant id="Participant_0t5e96n" processRef="Process_138dsn8" />
+    <bpmn:participant id="Participant_0t5e96n" name="Payement" processRef="Process_138dsn8" />
   </bpmn:collaboration>
   <bpmn:process id="Process_138dsn8" isExecutable="true">
     <bpmn:startEvent id="StartEvent_0d300ly">
@@ -29,9 +29,9 @@
       <bpmn:incoming>SequenceFlow_02vswiu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_078vumn</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:sendTask id="Task_1s5k28o" name="Send facture">
+    <bpmn:sendTask id="Task_1s5k28o" name="Send invoice">
       <bpmn:incoming>SequenceFlow_078vumn</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0l3ymh0</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0o9gkl2</bpmn:outgoing>
     </bpmn:sendTask>
     <bpmn:subProcess id="SubProcess_18s1ce5" name="Scoring">
       <bpmn:incoming>SequenceFlow_0v7h6vw</bpmn:incoming>
@@ -45,15 +45,20 @@
     <bpmn:sequenceFlow id="SequenceFlow_1hbw6k8" name="Other" sourceRef="ExclusiveGateway_0qwl8km" targetRef="Task_16p0a00" />
     <bpmn:sequenceFlow id="SequenceFlow_02vswiu" sourceRef="Task_1unrho7" targetRef="Task_16p0a00" />
     <bpmn:sequenceFlow id="SequenceFlow_078vumn" sourceRef="Task_16p0a00" targetRef="Task_1s5k28o" />
-    <bpmn:sequenceFlow id="SequenceFlow_0l3ymh0" sourceRef="Task_1s5k28o" targetRef="EndEvent_0076bcu" />
+    <bpmn:sequenceFlow id="SequenceFlow_0o9gkl2" sourceRef="Task_1s5k28o" targetRef="Task_1gfonun" />
+    <bpmn:sequenceFlow id="SequenceFlow_0zcjyk7" sourceRef="Task_1gfonun" targetRef="EndEvent_0076bcu" />
+    <bpmn:receiveTask id="Task_1gfonun" name="Receive payement">
+      <bpmn:incoming>SequenceFlow_0o9gkl2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0zcjyk7</bpmn:outgoing>
+    </bpmn:receiveTask>
     <bpmn:endEvent id="EndEvent_0076bcu">
-      <bpmn:incoming>SequenceFlow_0l3ymh0</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_0zcjyk7</bpmn:incoming>
     </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_00egolz">
       <bpmndi:BPMNShape id="Participant_0t5e96n_di" bpmnElement="Participant_0t5e96n" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="1280" height="270" />
+        <dc:Bounds x="160" y="80" width="1420" height="280" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0d300ly_di" bpmnElement="StartEvent_0d300ly">
         <dc:Bounds x="232" y="182" width="36" height="36" />
@@ -119,16 +124,23 @@
         <di:waypoint x="1170" y="200" />
         <di:waypoint x="1220" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0l3ymh0_di" bpmnElement="SequenceFlow_0l3ymh0">
-        <di:waypoint x="1320" y="200" />
-        <di:waypoint x="1382" y="200" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="SendTask_1cvhu43_di" bpmnElement="Task_1s5k28o">
         <dc:Bounds x="1220" y="160" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1hntn7p_di" bpmnElement="EndEvent_0076bcu">
-        <dc:Bounds x="1382" y="182" width="36" height="36" />
+        <dc:Bounds x="1522" y="182" width="36" height="36" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReceiveTask_135zs82_di" bpmnElement="Task_1gfonun">
+        <dc:Bounds x="1370" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0o9gkl2_di" bpmnElement="SequenceFlow_0o9gkl2">
+        <di:waypoint x="1320" y="200" />
+        <di:waypoint x="1370" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zcjyk7_di" bpmnElement="SequenceFlow_0zcjyk7">
+        <di:waypoint x="1470" y="200" />
+        <di:waypoint x="1522" y="200" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>

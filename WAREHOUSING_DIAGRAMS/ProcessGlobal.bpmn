@@ -6,12 +6,11 @@
     <bpmn:participant id="Participant_0v8lxhe" name="Transportation" processRef="Process_0mk981y" />
     <bpmn:messageFlow id="MessageFlow_1lbz6ps" sourceRef="Participant_1yvdzw6" targetRef="StartEvent_1xexzsj" />
     <bpmn:messageFlow id="MessageFlow_0fv08nz" sourceRef="SubProcess_1ggznwy" targetRef="Participant_0v8lxhe" />
+    <bpmn:messageFlow id="MessageFlow_0qp0j8u" sourceRef="Task_0iqypvv" targetRef="Participant_1yvdzw6" />
+    <bpmn:messageFlow id="MessageFlow_100hgkl" sourceRef="Participant_1yvdzw6" targetRef="Task_0iqypvv" />
   </bpmn:collaboration>
   <bpmn:process id="Process_0tiimbu" isExecutable="false" />
   <bpmn:process id="Process_1druvbs" isExecutable="false">
-    <bpmn:endEvent id="EndEvent_16egkyn">
-      <bpmn:incoming>SequenceFlow_0cw3wqb</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:startEvent id="StartEvent_1xexzsj" name="Product Arrived">
       <bpmn:outgoing>SequenceFlow_06ivjlc</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0dh0xnr" />
@@ -31,19 +30,27 @@
     </bpmn:subProcess>
     <bpmn:subProcess id="SubProcess_1ggznwy" name="Shipping Preparation">
       <bpmn:incoming>SequenceFlow_1vtkjk0</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0cw3wqb</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_11wqql6</bpmn:outgoing>
     </bpmn:subProcess>
     <bpmn:sequenceFlow id="SequenceFlow_07vfp06" sourceRef="SubProcess_19vqmrm" targetRef="SubProcess_0i2okot" />
     <bpmn:sequenceFlow id="SequenceFlow_0o3pxf1" sourceRef="SubProcess_0i2okot" targetRef="SubProcess_1cqqmur" />
     <bpmn:sequenceFlow id="SequenceFlow_1vtkjk0" sourceRef="SubProcess_1cqqmur" targetRef="SubProcess_1ggznwy" />
-    <bpmn:sequenceFlow id="SequenceFlow_0cw3wqb" sourceRef="SubProcess_1ggznwy" targetRef="EndEvent_16egkyn" />
     <bpmn:sequenceFlow id="SequenceFlow_06ivjlc" sourceRef="StartEvent_1xexzsj" targetRef="SubProcess_19vqmrm" />
+    <bpmn:endEvent id="EndEvent_16egkyn">
+      <bpmn:incoming>SequenceFlow_1rjs6lz</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_11wqql6" sourceRef="SubProcess_1ggznwy" targetRef="Task_0iqypvv" />
+    <bpmn:sequenceFlow id="SequenceFlow_1rjs6lz" sourceRef="Task_0iqypvv" targetRef="EndEvent_16egkyn" />
+    <bpmn:subProcess id="Task_0iqypvv" name="Payement">
+      <bpmn:incoming>SequenceFlow_11wqql6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1rjs6lz</bpmn:outgoing>
+    </bpmn:subProcess>
   </bpmn:process>
   <bpmn:process id="Process_0mk981y" isExecutable="false" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_00t2y5x">
       <bpmndi:BPMNShape id="Participant_1yvdzw6_di" bpmnElement="Participant_1yvdzw6" isHorizontal="true">
-        <dc:Bounds x="160" y="60" width="300" height="90" />
+        <dc:Bounds x="160" y="60" width="1150" height="90" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_0zqvci3_di" bpmnElement="Participant_0zqvci3" isHorizontal="true">
         <dc:Bounds x="160" y="250" width="1150" height="250" />
@@ -93,16 +100,31 @@
         <di:waypoint x="1020" y="530" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_16egkyn_di" bpmnElement="EndEvent_16egkyn">
-        <dc:Bounds x="1222" y="342" width="36" height="36" />
+        <dc:Bounds x="1252" y="342" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_0cw3wqb_di" bpmnElement="SequenceFlow_0cw3wqb">
-        <di:waypoint x="1070" y="360" />
-        <di:waypoint x="1222" y="360" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_06ivjlc_di" bpmnElement="SequenceFlow_06ivjlc">
         <di:waypoint x="258" y="360" />
         <di:waypoint x="330" y="360" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_11wqql6_di" bpmnElement="SequenceFlow_11wqql6">
+        <di:waypoint x="1070" y="360" />
+        <di:waypoint x="1110" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1rjs6lz_di" bpmnElement="SequenceFlow_1rjs6lz">
+        <di:waypoint x="1210" y="360" />
+        <di:waypoint x="1252" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_0qp0j8u_di" bpmnElement="MessageFlow_0qp0j8u">
+        <di:waypoint x="1140" y="320" />
+        <di:waypoint x="1140" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_100hgkl_di" bpmnElement="MessageFlow_100hgkl">
+        <di:waypoint x="1180" y="150" />
+        <di:waypoint x="1180" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="SubProcess_0ht1h3w_di" bpmnElement="Task_0iqypvv">
+        <dc:Bounds x="1110" y="320" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
