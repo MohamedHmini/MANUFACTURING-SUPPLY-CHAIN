@@ -43,14 +43,6 @@
       <bpmn:incoming>SequenceFlow_0z5tyoj</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0xt89bb</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="Task_11upypf" name="Update order status to &#34;shipped&#34;">
-      <bpmn:incoming>SequenceFlow_0e6wew1</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0a7wlsd</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_1nw1nim" name="Send delivery instructions to transporter">
-      <bpmn:incoming>SequenceFlow_1mkbmbw</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_19frcfj</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:task id="Task_1bi8cyn" name="Inspect packing quality">
       <bpmn:incoming>SequenceFlow_049rdhx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0k8hi48</bpmn:outgoing>
@@ -106,6 +98,14 @@
       <bpmn:outgoing>SequenceFlow_1mkbmbw</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_049rdhx</bpmn:outgoing>
     </bpmn:parallelGateway>
+    <bpmn:task id="Task_1nw1nim" name="Send delivery instructions to transporter">
+      <bpmn:incoming>SequenceFlow_1mkbmbw</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_19frcfj</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_11upypf" name="Update order status to &#34;shipped&#34;">
+      <bpmn:incoming>SequenceFlow_0e6wew1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0a7wlsd</bpmn:outgoing>
+    </bpmn:task>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1ns7b0w">
@@ -139,12 +139,6 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Task_09z8a6r_di" bpmnElement="Task_09z8a6r">
         <dc:Bounds x="1750" y="300" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_11upypf_di" bpmnElement="Task_11upypf">
-        <dc:Bounds x="1970" y="250" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_1nw1nim_di" bpmnElement="Task_1nw1nim">
-        <dc:Bounds x="1270" y="250" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_1bi8cyn_di" bpmnElement="Task_1bi8cyn">
         <dc:Bounds x="1270" y="150" width="100" height="80" />
@@ -263,6 +257,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ParallelGateway_0j4e1ko_di" bpmnElement="ExclusiveGateway_0rmlz9z">
         <dc:Bounds x="1405" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1ykh2st_di" bpmnElement="Task_1nw1nim">
+        <dc:Bounds x="1270" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1c8sa7s_di" bpmnElement="Task_11upypf">
+        <dc:Bounds x="1970" y="250" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

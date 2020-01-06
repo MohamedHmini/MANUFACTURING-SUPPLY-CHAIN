@@ -6,8 +6,6 @@
     <bpmn:participant id="Participant_0v8lxhe" name="Transportation" processRef="Process_0mk981y" />
     <bpmn:messageFlow id="MessageFlow_1lbz6ps" sourceRef="Participant_1yvdzw6" targetRef="StartEvent_1xexzsj" />
     <bpmn:messageFlow id="MessageFlow_0fv08nz" sourceRef="SubProcess_1ggznwy" targetRef="Participant_0v8lxhe" />
-    <bpmn:messageFlow id="MessageFlow_0qp0j8u" sourceRef="Task_0iqypvv" targetRef="Participant_1yvdzw6" />
-    <bpmn:messageFlow id="MessageFlow_100hgkl" sourceRef="Participant_1yvdzw6" targetRef="Task_0iqypvv" />
   </bpmn:collaboration>
   <bpmn:process id="Process_0tiimbu" isExecutable="false" />
   <bpmn:process id="Process_1druvbs" isExecutable="false">
@@ -96,6 +94,9 @@
       <bpmndi:BPMNEdge id="MessageFlow_0fv08nz_di" bpmnElement="MessageFlow_0fv08nz">
         <di:waypoint x="1020" y="400" />
         <di:waypoint x="1020" y="530" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1028" y="446" width="83" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_16egkyn_di" bpmnElement="EndEvent_16egkyn">
         <dc:Bounds x="1252" y="342" width="36" height="36" />
