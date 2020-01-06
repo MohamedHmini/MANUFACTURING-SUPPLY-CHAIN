@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0t94l5b" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.5.0">
   <bpmn:collaboration id="Collaboration_1074hg1">
-    <bpmn:participant id="Participant_16wubka" name="Reservation" processRef="Process_1itljv2" />
+    <bpmn:participant id="Participant_16wubka" processRef="Process_1itljv2" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1itljv2" isExecutable="true">
     <bpmn:parallelGateway id="ExclusiveGateway_0faaa6o">

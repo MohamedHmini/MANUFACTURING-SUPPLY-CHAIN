@@ -11,19 +11,6 @@
   </bpmn:collaboration>
   <bpmn:process id="Process_0tiimbu" isExecutable="false" />
   <bpmn:process id="Process_1druvbs" isExecutable="false">
-    <bpmn:startEvent id="StartEvent_1xexzsj" name="Product Arrived">
-      <bpmn:outgoing>SequenceFlow_06ivjlc</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0dh0xnr" />
-    </bpmn:startEvent>
-    <bpmn:subProcess id="SubProcess_19vqmrm" name="Put-away">
-      <bpmn:incoming>SequenceFlow_06ivjlc</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_07vfp06</bpmn:outgoing>
-      <bpmn:startEvent id="StartEvent_0ug22zu" />
-    </bpmn:subProcess>
-    <bpmn:subProcess id="SubProcess_0i2okot" name="Storage">
-      <bpmn:incoming>SequenceFlow_07vfp06</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0o3pxf1</bpmn:outgoing>
-    </bpmn:subProcess>
     <bpmn:subProcess id="SubProcess_1cqqmur" name="Order Picking">
       <bpmn:incoming>SequenceFlow_0o3pxf1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1vtkjk0</bpmn:outgoing>
@@ -35,7 +22,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_07vfp06" sourceRef="SubProcess_19vqmrm" targetRef="SubProcess_0i2okot" />
     <bpmn:sequenceFlow id="SequenceFlow_0o3pxf1" sourceRef="SubProcess_0i2okot" targetRef="SubProcess_1cqqmur" />
     <bpmn:sequenceFlow id="SequenceFlow_1vtkjk0" sourceRef="SubProcess_1cqqmur" targetRef="SubProcess_1ggznwy" />
-    <bpmn:sequenceFlow id="SequenceFlow_06ivjlc" sourceRef="StartEvent_1xexzsj" targetRef="SubProcess_19vqmrm" />
     <bpmn:endEvent id="EndEvent_16egkyn">
       <bpmn:incoming>SequenceFlow_1rjs6lz</bpmn:incoming>
     </bpmn:endEvent>
@@ -44,6 +30,24 @@
     <bpmn:subProcess id="Task_0iqypvv" name="Payement">
       <bpmn:incoming>SequenceFlow_11wqql6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1rjs6lz</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:startEvent id="StartEvent_1xexzsj">
+      <bpmn:outgoing>SequenceFlow_0x1on5n</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:subProcess id="SubProcess_0i2okot" name="Storage">
+      <bpmn:incoming>SequenceFlow_07vfp06</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0o3pxf1</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="SubProcess_1f23hun" name="Reservation">
+      <bpmn:incoming>SequenceFlow_0x1on5n</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tmafnq</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="SequenceFlow_0x1on5n" sourceRef="StartEvent_1xexzsj" targetRef="SubProcess_1f23hun" />
+    <bpmn:sequenceFlow id="SequenceFlow_0tmafnq" sourceRef="SubProcess_1f23hun" targetRef="SubProcess_19vqmrm" />
+    <bpmn:subProcess id="SubProcess_19vqmrm" name="Put-away">
+      <bpmn:incoming>SequenceFlow_0tmafnq</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_07vfp06</bpmn:outgoing>
+      <bpmn:startEvent id="StartEvent_0ug22zu" />
     </bpmn:subProcess>
   </bpmn:process>
   <bpmn:process id="Process_0mk981y" isExecutable="false" />
@@ -55,12 +59,6 @@
       <bpmndi:BPMNShape id="Participant_0zqvci3_di" bpmnElement="Participant_0zqvci3" isHorizontal="true">
         <dc:Bounds x="160" y="250" width="1150" height="250" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="StartEvent_0658yza_di" bpmnElement="StartEvent_1xexzsj">
-        <dc:Bounds x="222" y="342" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="202" y="385" width="77" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_1lbz6ps_di" bpmnElement="MessageFlow_1lbz6ps">
         <di:waypoint x="240" y="150" />
         <di:waypoint x="240" y="342" />
@@ -69,13 +67,13 @@
         <dc:Bounds x="950" y="530" width="300" height="90" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0ug22zu_di" bpmnElement="StartEvent_0ug22zu">
-        <dc:Bounds x="245" y="342" width="36" height="36" />
+        <dc:Bounds x="365" y="342" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_19vqmrm_di" bpmnElement="SubProcess_19vqmrm" isExpanded="false">
-        <dc:Bounds x="330" y="320" width="100" height="80" />
+        <dc:Bounds x="450" y="320" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_0i2okot_di" bpmnElement="SubProcess_0i2okot" isExpanded="false">
-        <dc:Bounds x="540" y="320" width="100" height="80" />
+        <dc:Bounds x="600" y="320" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SubProcess_1cqqmur_di" bpmnElement="SubProcess_1cqqmur" isExpanded="false">
         <dc:Bounds x="760" y="320" width="100" height="80" />
@@ -84,11 +82,11 @@
         <dc:Bounds x="970" y="320" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_07vfp06_di" bpmnElement="SequenceFlow_07vfp06">
-        <di:waypoint x="430" y="360" />
-        <di:waypoint x="540" y="360" />
+        <di:waypoint x="550" y="360" />
+        <di:waypoint x="600" y="360" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0o3pxf1_di" bpmnElement="SequenceFlow_0o3pxf1">
-        <di:waypoint x="640" y="360" />
+        <di:waypoint x="700" y="360" />
         <di:waypoint x="760" y="360" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1vtkjk0_di" bpmnElement="SequenceFlow_1vtkjk0">
@@ -102,10 +100,6 @@
       <bpmndi:BPMNShape id="EndEvent_16egkyn_di" bpmnElement="EndEvent_16egkyn">
         <dc:Bounds x="1252" y="342" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_06ivjlc_di" bpmnElement="SequenceFlow_06ivjlc">
-        <di:waypoint x="258" y="360" />
-        <di:waypoint x="330" y="360" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_11wqql6_di" bpmnElement="SequenceFlow_11wqql6">
         <di:waypoint x="1070" y="360" />
         <di:waypoint x="1110" y="360" />
@@ -125,6 +119,23 @@
       <bpmndi:BPMNShape id="SubProcess_0ht1h3w_di" bpmnElement="Task_0iqypvv">
         <dc:Bounds x="1110" y="320" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_1f23hun_di" bpmnElement="SubProcess_1f23hun">
+        <dc:Bounds x="300" y="320" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1ijlnx5_di" bpmnElement="StartEvent_1xexzsj">
+        <dc:Bounds x="222" y="342" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="202" y="385" width="77" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0x1on5n_di" bpmnElement="SequenceFlow_0x1on5n">
+        <di:waypoint x="258" y="360" />
+        <di:waypoint x="300" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0tmafnq_di" bpmnElement="SequenceFlow_0tmafnq">
+        <di:waypoint x="400" y="360" />
+        <di:waypoint x="450" y="360" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>

@@ -27,10 +27,6 @@
       <bpmn:outgoing>SequenceFlow_1nl8w8y</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_1qmsnp2</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="EndEvent_1aixrb9">
-      <bpmn:incoming>SequenceFlow_1prv6kt</bpmn:incoming>
-      <bpmn:terminateEventDefinition id="TerminateEventDefinition_0xs6edw" />
-    </bpmn:endEvent>
     <bpmn:task id="Task_1bl5a28" name="Notify suplier">
       <bpmn:incoming>SequenceFlow_1vp9zow</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0uqaiie</bpmn:outgoing>
@@ -103,6 +99,9 @@
     <bpmn:endEvent id="EndEvent_0fn0uf3">
       <bpmn:incoming>SequenceFlow_0ivdm6k</bpmn:incoming>
     </bpmn:endEvent>
+    <bpmn:endEvent id="EndEvent_1aixrb9">
+      <bpmn:incoming>SequenceFlow_1prv6kt</bpmn:incoming>
+    </bpmn:endEvent>
     <bpmn:association id="Association_1j0ff5n" sourceRef="ExclusiveGateway_0i3ngmf" targetRef="TextAnnotation_0wradtt" />
     <bpmn:textAnnotation id="TextAnnotation_0wradtt">
       <bpmn:text>Supplier's decision</bpmn:text>
@@ -139,9 +138,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0z0vyxo_di" bpmnElement="Task_0z0vyxo">
         <dc:Bounds x="750" y="480" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_1mkcmva_di" bpmnElement="EndEvent_1aixrb9">
-        <dc:Bounds x="892" y="502" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_1bzbrpd_di" bpmnElement="Task_1bzbrpd">
         <dc:Bounds x="1350" y="170" width="100" height="80" />
@@ -298,6 +294,9 @@
         <di:waypoint x="1272" y="387" />
         <di:waypoint x="1322" y="331" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1ctbkg4_di" bpmnElement="EndEvent_1aixrb9">
+        <dc:Bounds x="892" y="502" width="36" height="36" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>

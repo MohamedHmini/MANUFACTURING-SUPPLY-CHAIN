@@ -7,7 +7,7 @@
     <bpmn:startEvent id="StartEvent_0d300ly">
       <bpmn:outgoing>SequenceFlow_0pyt6fc</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Task_1bjlfvo" name="Extract the quantity of stock">
+    <bpmn:task id="Task_1bjlfvo" name="Extract the quantity of stock &#38; duration">
       <bpmn:incoming>SequenceFlow_0pyt6fc</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1th7s3f</bpmn:outgoing>
     </bpmn:task>
@@ -24,7 +24,7 @@
       <bpmn:incoming>SequenceFlow_01lpfe7</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_02vswiu</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="Task_16p0a00" name="Prepare facture">
+    <bpmn:task id="Task_16p0a00" name="Prepare invoice">
       <bpmn:incoming>SequenceFlow_1hbw6k8</bpmn:incoming>
       <bpmn:incoming>SequenceFlow_02vswiu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_078vumn</bpmn:outgoing>
