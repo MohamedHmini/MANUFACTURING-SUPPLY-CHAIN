@@ -6,7 +6,7 @@
   <bpmn:process id="Process_1ujz20u" isExecutable="true">
     <bpmn:sequenceFlow id="SequenceFlow_0yu95sm" sourceRef="Task_1umi4ym" targetRef="Task_0hpc01t" />
     <bpmn:sequenceFlow id="SequenceFlow_1i7lc29" sourceRef="StartEvent_0b88obs" targetRef="Task_0ordhig" />
-    <bpmn:task id="Task_0ordhig" name="Assembling products">
+    <bpmn:task id="Task_0ordhig" name="Bring the items">
       <bpmn:incoming>SequenceFlow_1i7lc29</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0berfnr</bpmn:outgoing>
     </bpmn:task>
